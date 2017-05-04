@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		292684FA1EBB5F6A00B8A3FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292684F91EBB5F6A00B8A3FA /* AppDelegate.swift */; };
-		292684FC1EBB5F6A00B8A3FA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 292684FB1EBB5F6A00B8A3FA /* GameScene.sks */; };
 		292684FE1EBB5F6A00B8A3FA /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = 292684FD1EBB5F6A00B8A3FA /* Actions.sks */; };
-		292685001EBB5F6A00B8A3FA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292684FF1EBB5F6A00B8A3FA /* GameScene.swift */; };
 		292685021EBB5F6A00B8A3FA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292685011EBB5F6A00B8A3FA /* GameViewController.swift */; };
 		292685051EBB5F6A00B8A3FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 292685031EBB5F6A00B8A3FA /* Main.storyboard */; };
 		292685071EBB5F6A00B8A3FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 292685061EBB5F6A00B8A3FA /* Assets.xcassets */; };
@@ -30,20 +28,8 @@
 		292685441EBB60AB00B8A3FA /* Player 11.png in Resources */ = {isa = PBXBuildFile; fileRef = 292685391EBB60AB00B8A3FA /* Player 11.png */; };
 		292685471EBB610700B8A3FA /* Jump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 292685461EBB610700B8A3FA /* Jump.wav */; };
 		2926854B1EBB613000B8A3FA /* RosewoodStd-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2926854A1EBB613000B8A3FA /* RosewoodStd-Regular.otf */; };
-		292685531EBB615B00B8A3FA /* Obstacle 0.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926854D1EBB615B00B8A3FA /* Obstacle 0.png */; };
-		292685541EBB615B00B8A3FA /* Obstacle 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926854E1EBB615B00B8A3FA /* Obstacle 1.png */; };
-		292685551EBB615B00B8A3FA /* Obstacle 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926854F1EBB615B00B8A3FA /* Obstacle 2.png */; };
-		292685561EBB615B00B8A3FA /* Obstacle 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 292685501EBB615B00B8A3FA /* Obstacle 3.png */; };
-		292685571EBB615B00B8A3FA /* Obstacle 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 292685511EBB615B00B8A3FA /* Obstacle 4.png */; };
-		292685581EBB615B00B8A3FA /* Obstacle 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 292685521EBB615B00B8A3FA /* Obstacle 5.png */; };
-		292685601EBB617300B8A3FA /* Pause Button.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855A1EBB617300B8A3FA /* Pause Button.png */; };
-		292685611EBB617300B8A3FA /* Pause Panel.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855B1EBB617300B8A3FA /* Pause Panel.png */; };
-		292685621EBB617300B8A3FA /* Play.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855C1EBB617300B8A3FA /* Play.png */; };
-		292685631EBB617300B8A3FA /* Quit.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855D1EBB617300B8A3FA /* Quit.png */; };
-		292685641EBB617300B8A3FA /* Restart.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855E1EBB617300B8A3FA /* Restart.png */; };
-		292685651EBB617300B8A3FA /* Score.png in Resources */ = {isa = PBXBuildFile; fileRef = 2926855F1EBB617300B8A3FA /* Score.png */; };
-		292685691EBB619300B8A3FA /* BG.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292685671EBB619300B8A3FA /* BG.jpg */; };
-		2926856A1EBB619300B8A3FA /* Ground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 292685681EBB619300B8A3FA /* Ground.jpg */; };
+		2926856E1EBB636B00B8A3FA /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2926856D1EBB636B00B8A3FA /* GameplayScene.sks */; };
+		292685721EBB643100B8A3FA /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292685711EBB643100B8A3FA /* GameplayScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,9 +52,7 @@
 /* Begin PBXFileReference section */
 		292684F61EBB5F6A00B8A3FA /* Cowboy runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cowboy runner.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		292684F91EBB5F6A00B8A3FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		292684FB1EBB5F6A00B8A3FA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		292684FD1EBB5F6A00B8A3FA /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		292684FF1EBB5F6A00B8A3FA /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		292685011EBB5F6A00B8A3FA /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		292685041EBB5F6A00B8A3FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		292685061EBB5F6A00B8A3FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -93,20 +77,8 @@
 		292685391EBB60AB00B8A3FA /* Player 11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Player 11.png"; sourceTree = "<group>"; };
 		292685461EBB610700B8A3FA /* Jump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Jump.wav; sourceTree = "<group>"; };
 		2926854A1EBB613000B8A3FA /* RosewoodStd-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RosewoodStd-Regular.otf"; sourceTree = "<group>"; };
-		2926854D1EBB615B00B8A3FA /* Obstacle 0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 0.png"; sourceTree = "<group>"; };
-		2926854E1EBB615B00B8A3FA /* Obstacle 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 1.png"; sourceTree = "<group>"; };
-		2926854F1EBB615B00B8A3FA /* Obstacle 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 2.png"; sourceTree = "<group>"; };
-		292685501EBB615B00B8A3FA /* Obstacle 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 3.png"; sourceTree = "<group>"; };
-		292685511EBB615B00B8A3FA /* Obstacle 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 4.png"; sourceTree = "<group>"; };
-		292685521EBB615B00B8A3FA /* Obstacle 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Obstacle 5.png"; sourceTree = "<group>"; };
-		2926855A1EBB617300B8A3FA /* Pause Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Button.png"; sourceTree = "<group>"; };
-		2926855B1EBB617300B8A3FA /* Pause Panel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Pause Panel.png"; sourceTree = "<group>"; };
-		2926855C1EBB617300B8A3FA /* Play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Play.png; sourceTree = "<group>"; };
-		2926855D1EBB617300B8A3FA /* Quit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Quit.png; sourceTree = "<group>"; };
-		2926855E1EBB617300B8A3FA /* Restart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Restart.png; sourceTree = "<group>"; };
-		2926855F1EBB617300B8A3FA /* Score.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Score.png; sourceTree = "<group>"; };
-		292685671EBB619300B8A3FA /* BG.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BG.jpg; sourceTree = "<group>"; };
-		292685681EBB619300B8A3FA /* Ground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ground.jpg; sourceTree = "<group>"; };
+		2926856D1EBB636B00B8A3FA /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
+		292685711EBB643100B8A3FA /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +110,8 @@
 			isa = PBXGroup;
 			children = (
 				292684F81EBB5F6A00B8A3FA /* Cowboy runner */,
+				2926856C1EBB62E200B8A3FA /* Classes */,
+				2926856B1EBB62DB00B8A3FA /* Scenes */,
 				2926852D1EBB608000B8A3FA /* Assets */,
 				292685131EBB5F6A00B8A3FA /* Cowboy runnerTests */,
 				2926851E1EBB5F6A00B8A3FA /* Cowboy runnerUITests */,
@@ -159,9 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				292684F91EBB5F6A00B8A3FA /* AppDelegate.swift */,
-				292684FB1EBB5F6A00B8A3FA /* GameScene.sks */,
 				292684FD1EBB5F6A00B8A3FA /* Actions.sks */,
-				292684FF1EBB5F6A00B8A3FA /* GameScene.swift */,
 				292685011EBB5F6A00B8A3FA /* GameViewController.swift */,
 				292685031EBB5F6A00B8A3FA /* Main.storyboard */,
 				292685061EBB5F6A00B8A3FA /* Assets.xcassets */,
@@ -192,9 +164,6 @@
 		2926852D1EBB608000B8A3FA /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				292685661EBB618300B8A3FA /* BackgroundAndGround */,
-				292685591EBB616100B8A3FA /* Buttons */,
-				2926854C1EBB614000B8A3FA /* Obstacle */,
 				292685481EBB610A00B8A3FA /* Fonts */,
 				292685451EBB60F600B8A3FA /* Sounds */,
 				2926852E1EBB609300B8A3FA /* Player */,
@@ -237,39 +206,20 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
-		2926854C1EBB614000B8A3FA /* Obstacle */ = {
+		2926856B1EBB62DB00B8A3FA /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				2926854D1EBB615B00B8A3FA /* Obstacle 0.png */,
-				2926854E1EBB615B00B8A3FA /* Obstacle 1.png */,
-				2926854F1EBB615B00B8A3FA /* Obstacle 2.png */,
-				292685501EBB615B00B8A3FA /* Obstacle 3.png */,
-				292685511EBB615B00B8A3FA /* Obstacle 4.png */,
-				292685521EBB615B00B8A3FA /* Obstacle 5.png */,
+				2926856D1EBB636B00B8A3FA /* GameplayScene.sks */,
 			);
-			name = Obstacle;
+			name = Scenes;
 			sourceTree = "<group>";
 		};
-		292685591EBB616100B8A3FA /* Buttons */ = {
+		2926856C1EBB62E200B8A3FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				2926855A1EBB617300B8A3FA /* Pause Button.png */,
-				2926855B1EBB617300B8A3FA /* Pause Panel.png */,
-				2926855C1EBB617300B8A3FA /* Play.png */,
-				2926855D1EBB617300B8A3FA /* Quit.png */,
-				2926855E1EBB617300B8A3FA /* Restart.png */,
-				2926855F1EBB617300B8A3FA /* Score.png */,
+				292685711EBB643100B8A3FA /* GameplayScene.swift */,
 			);
-			name = Buttons;
-			sourceTree = "<group>";
-		};
-		292685661EBB618300B8A3FA /* BackgroundAndGround */ = {
-			isa = PBXGroup;
-			children = (
-				292685671EBB619300B8A3FA /* BG.jpg */,
-				292685681EBB619300B8A3FA /* Ground.jpg */,
-			);
-			name = BackgroundAndGround;
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -382,37 +332,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				292685651EBB617300B8A3FA /* Score.png in Resources */,
-				292685621EBB617300B8A3FA /* Play.png in Resources */,
-				292685531EBB615B00B8A3FA /* Obstacle 0.png in Resources */,
 				292685051EBB5F6A00B8A3FA /* Main.storyboard in Resources */,
 				2926853F1EBB60AB00B8A3FA /* Player 6.png in Resources */,
-				292685581EBB615B00B8A3FA /* Obstacle 5.png in Resources */,
+				2926856E1EBB636B00B8A3FA /* GameplayScene.sks in Resources */,
 				2926854B1EBB613000B8A3FA /* RosewoodStd-Regular.otf in Resources */,
-				292684FC1EBB5F6A00B8A3FA /* GameScene.sks in Resources */,
-				2926856A1EBB619300B8A3FA /* Ground.jpg in Resources */,
-				292685691EBB619300B8A3FA /* BG.jpg in Resources */,
 				2926853B1EBB60AB00B8A3FA /* Player 2.png in Resources */,
-				292685571EBB615B00B8A3FA /* Obstacle 4.png in Resources */,
 				292685411EBB60AB00B8A3FA /* Player 8.png in Resources */,
-				292685541EBB615B00B8A3FA /* Obstacle 1.png in Resources */,
-				292685641EBB617300B8A3FA /* Restart.png in Resources */,
 				292685071EBB5F6A00B8A3FA /* Assets.xcassets in Resources */,
-				292685561EBB615B00B8A3FA /* Obstacle 3.png in Resources */,
 				292685431EBB60AB00B8A3FA /* Player 10.png in Resources */,
 				2926850A1EBB5F6A00B8A3FA /* LaunchScreen.storyboard in Resources */,
 				292684FE1EBB5F6A00B8A3FA /* Actions.sks in Resources */,
 				2926853A1EBB60AB00B8A3FA /* Player 1.png in Resources */,
-				292685611EBB617300B8A3FA /* Pause Panel.png in Resources */,
-				292685631EBB617300B8A3FA /* Quit.png in Resources */,
 				292685421EBB60AB00B8A3FA /* Player 9.png in Resources */,
 				292685471EBB610700B8A3FA /* Jump.wav in Resources */,
 				2926853E1EBB60AB00B8A3FA /* Player 5.png in Resources */,
 				2926853C1EBB60AB00B8A3FA /* Player 3.png in Resources */,
 				2926853D1EBB60AB00B8A3FA /* Player 4.png in Resources */,
-				292685551EBB615B00B8A3FA /* Obstacle 2.png in Resources */,
 				292685401EBB60AB00B8A3FA /* Player 7.png in Resources */,
-				292685601EBB617300B8A3FA /* Pause Button.png in Resources */,
 				292685441EBB60AB00B8A3FA /* Player 11.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -438,7 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				292685001EBB5F6A00B8A3FA /* GameScene.swift in Sources */,
+				292685721EBB643100B8A3FA /* GameplayScene.swift in Sources */,
 				292685021EBB5F6A00B8A3FA /* GameViewController.swift in Sources */,
 				292684FA1EBB5F6A00B8A3FA /* AppDelegate.swift in Sources */,
 			);
