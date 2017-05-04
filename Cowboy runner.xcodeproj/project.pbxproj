@@ -30,6 +30,7 @@
 		2926854B1EBB613000B8A3FA /* RosewoodStd-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2926854A1EBB613000B8A3FA /* RosewoodStd-Regular.otf */; };
 		2926856E1EBB636B00B8A3FA /* GameplayScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2926856D1EBB636B00B8A3FA /* GameplayScene.sks */; };
 		292685721EBB643100B8A3FA /* GameplayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292685711EBB643100B8A3FA /* GameplayScene.swift */; };
+		29720BBF1EBB77C7002262E8 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29720BBE1EBB77C7002262E8 /* Player.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		2926854A1EBB613000B8A3FA /* RosewoodStd-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "RosewoodStd-Regular.otf"; sourceTree = "<group>"; };
 		2926856D1EBB636B00B8A3FA /* GameplayScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameplayScene.sks; sourceTree = "<group>"; };
 		292685711EBB643100B8A3FA /* GameplayScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameplayScene.swift; sourceTree = "<group>"; };
+		29720BBE1EBB77C7002262E8 /* Player.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,9 +219,26 @@
 		2926856C1EBB62E200B8A3FA /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				292685711EBB643100B8A3FA /* GameplayScene.swift */,
+				29720BBD1EBB77BB002262E8 /* Player */,
+				29720BBC1EBB77AB002262E8 /* SceneClasses */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		29720BBC1EBB77AB002262E8 /* SceneClasses */ = {
+			isa = PBXGroup;
+			children = (
+				292685711EBB643100B8A3FA /* GameplayScene.swift */,
+			);
+			name = SceneClasses;
+			sourceTree = "<group>";
+		};
+		29720BBD1EBB77BB002262E8 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				29720BBE1EBB77C7002262E8 /* Player.swift */,
+			);
+			name = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,6 +393,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29720BBF1EBB77C7002262E8 /* Player.swift in Sources */,
 				292685721EBB643100B8A3FA /* GameplayScene.swift in Sources */,
 				292685021EBB5F6A00B8A3FA /* GameViewController.swift in Sources */,
 				292684FA1EBB5F6A00B8A3FA /* AppDelegate.swift in Sources */,
@@ -627,6 +647,7 @@
 				292685261EBB5F6A00B8A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		292685271EBB5F6A00B8A3FA /* Build configuration list for PBXNativeTarget "Cowboy runnerTests" */ = {
 			isa = XCConfigurationList;
@@ -635,6 +656,7 @@
 				292685291EBB5F6A00B8A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2926852A1EBB5F6A00B8A3FA /* Build configuration list for PBXNativeTarget "Cowboy runnerUITests" */ = {
 			isa = XCConfigurationList;
@@ -643,6 +665,7 @@
 				2926852C1EBB5F6A00B8A3FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
