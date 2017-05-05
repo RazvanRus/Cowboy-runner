@@ -12,6 +12,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     var player = Player()
     var canJump = false
+    var onObstacle = false
+    var isAlive = false
     var obstacles = [SKSpriteNode]()
     
     
@@ -25,18 +27,24 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         createBackgrounds()
         createGrounds()
         createPlayer()
+        isAlive = true
         createObstacles()
+        checkPlayerBounds()
         
         Timer.scheduledTimer(timeInterval: TimeInterval(randomBetweenNumbers(firstNumber: 2, secoundeNoumber: 6)), target: self, selector: #selector(GameplayScene.spawnObstacles), userInfo: nil, repeats: true)
     }
     
     override func update(_ currentTime: TimeInterval) {
         moveBackgroundsAndGrounds()
+        if onObstacle {
+            movePlayerBack()
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if canJump {
             canJump = false
+            onObstacle = false
             player.jump()
         }
     }
@@ -60,11 +68,13 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }
         
         if firstBody.node?.name == "Player" && secoundBody.node?.name == "Obstacle" {
-            
+            canJump = true
+            onObstacle = true
         }
         
         if firstBody.node?.name == "Player" && secoundBody.node?.name == "Cactus" {
             // kill player
+            isAlive = false
         }
     }
     
@@ -125,7 +135,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             //casting a node
             let groundNode = node as! SKSpriteNode
             
-            groundNode.position.x -= 4
+            groundNode.position.x -= 5
             
             if groundNode.position.x < -(self.frame.width) {
                 groundNode.position.x += groundNode.size.width * 3
@@ -133,6 +143,9 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         }))
     }
     
+    func movePlayerBack() {
+        player.position.x -= 5
+    }
     
     func createObstacles() {
         
@@ -140,10 +153,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             let obstacle = SKSpriteNode(imageNamed: "Obstacle \(i)")
             if i == 0 {
                 obstacle.name = "Cactus"
-                obstacle.setScale(0.4)
+                obstacle.setScale(0.15)
             } else {
                 obstacle.name = "Obstacle"
-                obstacle.setScale(0.5)
+                obstacle.setScale(0.6)
             }
             obstacle.setScale(0.5)
             obstacle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
@@ -165,7 +178,7 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         
         obstacle.position = CGPoint(x: self.frame.width + obstacle.size.width, y: 50)
         
-        let move = SKAction.moveTo(x: -(self.frame.size.width*2), duration: TimeInterval(15))
+        let move = SKAction.moveTo(x: -(self.frame.size.width*2), duration: TimeInterval(14))
         let remove = SKAction.removeFromParent()
         let sequence = SKAction.sequence([move,remove])
         
@@ -176,9 +189,24 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     
     func randomBetweenNumbers(firstNumber: CGFloat,secoundeNoumber: CGFloat) -> CGFloat {
-        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNumber - secoundeNoumber) + min(firstNumber, secoundeNoumber)
+        let randomNumber = CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNumber - secoundeNoumber) + min(firstNumber, secoundeNoumber)
+        print(randomNumber)
+        
+        return randomNumber
     }
     
+    func checkPlayerBounds() {
+        if isAlive {
+            if player.position.x < -(self.frame.size.width / 2) - 20 {
+                playerDied()
+            }
+        }
+    }
+    
+    func playerDied() {
+        isAlive = false
+
+    }
     
 }
 

@@ -15,9 +15,23 @@ struct ColliderType {
 }
 
 class Player: SKSpriteNode {
+
+    var playerWalkAnimation = [SKTexture]()
+    var playerWalkAnimationAction = SKAction()
+    
     
     func initialize() {
         createPlayer()
+        createAnimation()
+        startPlayerWalkAnimation()
+    }
+    
+    func createAnimation() {
+        for i in 1...11 {
+            let name = "Player \(i)"
+            playerWalkAnimation.append(SKTexture(imageNamed: name))
+        }
+        playerWalkAnimationAction = SKAction.animate(with: playerWalkAnimation, timePerFrame: TimeInterval(0.064), resize: true, restore: true)
     }
     
     func createPlayer() {
@@ -25,7 +39,7 @@ class Player: SKSpriteNode {
         self.zPosition = 2
         self.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         self.setScale(0.5)
-        self.physicsBody = SKPhysicsBody(rectangleOf: self.size)
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width - 20, height: self.size.height))
         self.physicsBody?.affectedByGravity = true
         self.physicsBody?.allowsRotation = false
         self.physicsBody?.categoryBitMask = ColliderType.Player
@@ -35,7 +49,11 @@ class Player: SKSpriteNode {
     
     func jump() {
         self.physicsBody?.velocity = CGVector(dx: 0, dy: 0)
-        self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 300))
+        self.physicsBody?.applyImpulse(CGVector(dx: 0, dy: 220))
+    }
+    
+    func startPlayerWalkAnimation() {
+        self.run(SKAction.repeatForever(playerWalkAnimationAction))
     }
     
 }
