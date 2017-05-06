@@ -20,6 +20,8 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     var scoreLabel = SKLabelNode(fontNamed: "RosewoodStd-Regular")
     var score = 0
+    
+    var pausePanel = SKSpriteNode()
 
     
     
@@ -57,29 +59,36 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if canJump {
-            canJump = false
-            onObstacle = false
-            player.jump()
-        }
-        
         for touch in touches {
             let location = touch.location(in: self)
             
             if atPoint(location).name == "Retry" {
-                self.removeAllActions()
-                self.removeAllChildren()
-                canJump = false
-                onObstacle = false
-                isAlive = false
-                score = 0
-                initialize()
+                let mainMenu = GameplayScene(fileNamed: "GameplayScene")
+                mainMenu?.scaleMode = .aspectFill
+                self.view?.presentScene(mainMenu!, transition: SKTransition.crossFade(withDuration: TimeInterval(0.5)))
             }
             if atPoint(location).name == "Quit" {
                 // go to main menu scene
                 let mainMenu = MainMenuScene(fileNamed: "MainMenuScene")
                 mainMenu?.scaleMode = .aspectFill
                 self.view?.presentScene(mainMenu!, transition: SKTransition.crossFade(withDuration: TimeInterval(0.5)))
+            }
+            if atPoint(location).name == "Pause" {
+                createPausePanel()
+                timer.invalidate()
+                scoreTimer.invalidate()
+            }
+            if atPoint(location).name == "Resume" {
+                pausePanel.removeFromParent()
+                self.scene?.isPaused = false
+                timer = Timer.scheduledTimer(timeInterval: TimeInterval(randomBetweenNumbers(firstNumber: 1, secoundeNoumber: 3)), target: self, selector: #selector(GameplayScene.spawnObstacles), userInfo: nil, repeats: false)
+                scoreTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.5), target: self, selector: #selector(GameplayScene.incrementScore), userInfo: nil, repeats: false)
+            } else if atPoint(location).name != "Pause" {
+                if canJump {
+                    canJump = false
+                    onObstacle = false
+                    player.jump()
+                }
             }
         }
     }
@@ -201,12 +210,11 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             let obstacle = SKSpriteNode(imageNamed: "Obstacle \(i)")
             if i == 0 {
                 obstacle.name = "Cactus"
-                obstacle.setScale(0.15)
+                obstacle.setScale(0.5)
             } else {
                 obstacle.name = "Obstacle"
-                obstacle.setScale(0.6)
+                obstacle.setScale(0.4)
             }
-            obstacle.setScale(0.5)
             obstacle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             obstacle.zPosition = 1
             
@@ -297,6 +305,37 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(quit)
 
         
+    }
+    
+    func createPausePanel() {
+        
+        self.scene?.isPaused = true
+        
+        pausePanel = SKSpriteNode(imageNamed: "Pause Panel")
+        pausePanel.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        pausePanel.position = CGPoint(x: 0, y: 0)
+        pausePanel.zPosition = 10
+        
+        let resume = SKSpriteNode(imageNamed: "Play")
+        let quit = SKSpriteNode(imageNamed: "Quit")
+        
+        resume.name = "Resume"
+        resume.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        resume.position = CGPoint(x: -150, y: 0)
+        resume.zPosition = 10
+        resume.setScale(0.75)
+        
+        quit.name = "Quit"
+        quit.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        quit.position = CGPoint(x: 150, y: 0)
+        quit.zPosition = 10
+        quit.setScale(0.75)
+
+        
+        pausePanel.addChild(resume)
+        pausePanel.addChild(quit)
+        
+        self.addChild(pausePanel)
     }
     
 }

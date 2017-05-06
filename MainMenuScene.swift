@@ -11,6 +11,7 @@ import SpriteKit
 class MainMenuScene: SKScene {
     
     var scoreLabel = SKLabelNode(fontNamed: "RosewoodStd-Regular")
+    var obstacles = [SKSpriteNode]()
 
     
     override func didMove(to view: SKView) {
@@ -23,6 +24,8 @@ class MainMenuScene: SKScene {
         createGrounds()
         createBackgrounds()
         createLabel()
+        createObstacles()
+        spawnObstacles()
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -80,6 +83,12 @@ class MainMenuScene: SKScene {
             ground.anchorPoint = CGPoint(x: 0.5, y: 0.5)
             ground.position = CGPoint(x: CGFloat(i) * ground.size.width, y: -(self.frame.size.height / 2))
             ground.zPosition = 3
+            
+            ground.physicsBody = SKPhysicsBody(rectangleOf: ground.size)
+            ground.physicsBody?.affectedByGravity = false
+            ground.physicsBody?.isDynamic = false
+            ground.physicsBody?.categoryBitMask = ColliderType.Ground
+            
             self.addChild(ground)
         }
     }
@@ -108,6 +117,51 @@ class MainMenuScene: SKScene {
                 groundNode.position.x += groundNode.size.width * 3
             }
         }))
+    }
+    
+    func createObstacles() {
+        
+        for i in 0...5 {
+            let obstacle = SKSpriteNode(imageNamed: "Obstacle \(i)")
+            if i == 0 {
+                obstacle.name = "Cactus"
+                obstacle.setScale(0.5)
+            } else {
+                obstacle.name = "Obstacle"
+                obstacle.setScale(0.4)
+            }
+            obstacle.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+            obstacle.zPosition = 5
+
+            obstacle.physicsBody = SKPhysicsBody(rectangleOf: obstacle.size)
+            obstacle.physicsBody?.allowsRotation = false
+            obstacle.physicsBody?.categoryBitMask = ColliderType.Obstacle
+            
+            obstacles.append(obstacle)
+        }
+        
+    }
+    
+    func spawnObstacles() {
+        
+        let index = Int(arc4random_uniform(UInt32(obstacles.count)))
+        let obstacle = obstacles[index].copy() as! SKSpriteNode
+        
+        obstacle.position = CGPoint(x: self.frame.width + obstacle.size.width, y: 50)
+        
+        let move = SKAction.moveTo(x: -(self.frame.size.width*2), duration: TimeInterval(14))
+        let remove = SKAction.removeFromParent()
+        let sequence = SKAction.sequence([move,remove])
+        
+        obstacle.run(sequence)
+        
+        self.addChild(obstacle)
+        
+        Timer.scheduledTimer(timeInterval: TimeInterval(randomBetweenNumbers(firstNumber: 2, secoundeNoumber: 4)), target: self, selector: #selector(GameplayScene.spawnObstacles), userInfo: nil, repeats: false)
+    }
+
+    func randomBetweenNumbers(firstNumber: CGFloat,secoundeNoumber: CGFloat) -> CGFloat {
+        return CGFloat(arc4random()) / CGFloat(UINT32_MAX) * abs(firstNumber - secoundeNoumber) + min(firstNumber, secoundeNoumber)
     }
 
     
